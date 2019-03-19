@@ -2,10 +2,12 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:POKEnhanced" 
-             x:Class="POKEnhanced.MainPage">
+             x:Class="POKEnhanced.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+            >
     
-    <local:SearchPage Title="Search"/>
     <local:HomePage Title="Home"/>
+    <local:SearchPage Title="Search"/>
     <local:NewsPage Title="News"/>
         
 </TabbedPage>
