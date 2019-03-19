@@ -11,5 +11,22 @@ namespace POKEnhanced
         {
             InitializeComponent();
         }
+
+        private async void teamButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TeamPage());
+        }
+
+        private async void historyButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryPage());
+        }
+
+        private async void newsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NewsPage());
+        }
+
+
     }
 }

@@ -4,7 +4,55 @@
              x:Class="POKEnhanced.HomePage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
              >
+             
+    <StackLayout Spacing="15" Padding="15" HorizontalOptions="FillAndExpand">
+      
+        <Label
+            Text="HOME:"
+            FontSize="Large"
+            TextColor="Maroon"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            />
+        
+        <BoxView
+            Color="White"
+            HeightRequest="60"
+            />
+        
+        <Button
+            x:Name="teamButton"
+            Text="My Team"
+            BackgroundColor="Maroon"
+            TextColor="White"
+            FontAttributes="Bold"
+            HorizontalOptions="CenterAndExpand"
+            WidthRequest="250"
+            Clicked="teamButton_Clicked"
+            />
+        
+        <Button
+            x:Name="historyButton"
+            Text="Search History"
+            BackgroundColor="Maroon"
+            TextColor="White"
+            FontAttributes="Bold"
+            HorizontalOptions="CenterAndExpand"
+            WidthRequest="250"
+            Clicked="historyButton_Clicked"
+            />
+        
+        <Button
+            x:Name="FavouritesButton"
+            Text="Favourites"
+            BackgroundColor="Maroon"
+            TextColor="White"
+            FontAttributes="Bold"
+            HorizontalOptions="CenterAndExpand"
+            WidthRequest="250"
+            Clicked="newsButton_Clicked"
+            />
+        
+        </StackLayout>
     
-    <ContentPage.Content>
-    </ContentPage.Content>
 </ContentPage>
