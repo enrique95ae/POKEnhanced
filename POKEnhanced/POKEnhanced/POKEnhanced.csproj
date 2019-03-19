@@ -15,4 +15,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="HomePage.cs" />
+  </ItemGroup>
 </Project>

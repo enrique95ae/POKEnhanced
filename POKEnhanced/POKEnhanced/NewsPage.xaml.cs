@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace POKEnhanced
 {
-    public partial class MainPage : TabbedPage
+    public partial class NewsPage : ContentPage
     {
-        public MainPage()
+        public NewsPage()
         {
             InitializeComponent();
         }
