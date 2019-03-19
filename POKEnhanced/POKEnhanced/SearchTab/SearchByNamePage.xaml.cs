@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace POKEnhanced
 {
-    public partial class SearchPage : ContentPage
+    public partial class SearchByNamePage : ContentPage
     {
-        public SearchPage()
+        public SearchByNamePage()
         {
             InitializeComponent();
         }

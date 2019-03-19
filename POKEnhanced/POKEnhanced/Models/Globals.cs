@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 
 namespace Globals
 {
-
     public static class GlobalVariables
     {
         public static int PokemonInTeam;

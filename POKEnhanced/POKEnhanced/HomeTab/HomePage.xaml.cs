@@ -12,6 +12,16 @@ namespace POKEnhanced
             InitializeComponent();
         }
 
+
+
+
+
+
+
+
+
+
+        //NAVIGATION BUTTONS: ===================================================================================================
         private async void teamButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TeamPage());
@@ -26,7 +36,7 @@ namespace POKEnhanced
         {
             await Navigation.PushAsync(new NewsPage());
         }
-
+        //=======================================================================================================================
 
     }
 }
