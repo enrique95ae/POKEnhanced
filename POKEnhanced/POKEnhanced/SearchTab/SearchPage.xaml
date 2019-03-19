@@ -40,6 +40,7 @@
             FontAttributes="Bold"
             HorizontalOptions="CenterAndExpand"
             WidthRequest="250"
+            Clicked="byRegionButton_Clicked"
             />
         
         <Button
@@ -50,6 +51,7 @@
             FontAttributes="Bold"
             HorizontalOptions="CenterAndExpand"
             WidthRequest="250"
+            Clicked="byNumberButton_Clicked"
             />
         
         </StackLayout>
