@@ -4,9 +4,11 @@
              xmlns:local="clr-namespace:POKEnhanced" 
              x:Class="POKEnhanced.MainPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+            BarBackgroundColor="Silver"
+            BarTextColor="#1b9d9f"
             >
     
-    <local:HomePage Title="Home"/>
+    <local:HomePage Icon="http://enriqueae.com/mobile/HomeIcon.png" />
     <local:SearchPage Title="Search"/>
     <local:NewsPage Title="News"/>
         

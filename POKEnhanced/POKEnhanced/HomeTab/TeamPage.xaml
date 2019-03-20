@@ -11,7 +11,4 @@
                 </Grid.RowDefinitions>
             </Grid>
         </StackLayout>
-    
-    
-    
 </ContentPage>
