@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:POKEnhanced2" 
+             x:Class="POKEnhanced2.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+            BarBackgroundColor="Silver"
+            BarTextColor="#1b9d9f"
+            >
+    
+    <local:HomePage Icon="http://enriqueae.com/mobile/HomeButton.png" />
+    <local:SearchPage Title="Search"/>
+    <local:NewsPage Title="News"/>
+        
+</TabbedPage>
