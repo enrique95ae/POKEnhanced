@@ -8,8 +8,8 @@
             BarTextColor="#1b9d9f"
             >
     
-    <local:HomePage Icon="http://enriqueae.com/mobile/HomeButton.png" />
-    <local:SearchPage Title="Search"/>
-    <local:NewsPage Title="News"/>
+    <local:HomePage Title="Home" Icon="HomeButton.png"/>
+    <local:SearchPage Title="Search" Icon="SearchIconBase.png"/>
+    <local:NewsPage Title="News" Icon="NewsIconBase.png"/>
         
 </TabbedPage>

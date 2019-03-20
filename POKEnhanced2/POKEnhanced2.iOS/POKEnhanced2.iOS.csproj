@@ -157,4 +157,9 @@
       <Name>POKEnhanced2</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HomeButton.png" />
+    <BundleResource Include="Resources\SearchIconBase.png" />
+    <BundleResource Include="Resources\NewsIconBase.png" />
+  </ItemGroup>
 </Project>
