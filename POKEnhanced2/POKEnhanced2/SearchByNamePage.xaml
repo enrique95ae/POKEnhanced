@@ -1,5 +1,55 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="POKEnhanced2.SearchByNamePage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="POKEnhanced2.SearchByNamePage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             BackgroundColor="Silver"
+             >
+    
+    <StackLayout>
+        <Grid HorizontalOptions="Center" VerticalOptions="Start" Margin="15" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+            
+            <Label
+                Text="Search By Name:"
+                TextColor="#1b9d9f"
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                FontSize="Large"
+                FontAttributes="Bold"
+                />
+            
+            <Entry
+                x:Name="nameEntry"
+                Placeholder="Enter a name..."
+                Grid.Row="1"
+                BackgroundColor="Gray"
+                />
+            
+            <Image
+                Source="http://enriqueae.com/mobile/ButtonBase.png"
+                Grid.Row="2"
+                WidthRequest="200"
+                HeightRequest="75"
+                />
+            
+            <Button
+                x:Name="searchButton"
+                Text="Search"
+                TextColor="White"
+                Grid.Row="2"
+                FontSize="Large"
+                FontAttributes="Bold"
+                />
+            
+            </Grid>
+            
+        </StackLayout>
 </ContentPage>

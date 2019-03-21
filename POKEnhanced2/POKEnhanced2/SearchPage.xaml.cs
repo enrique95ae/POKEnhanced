@@ -7,6 +7,8 @@ namespace POKEnhanced2
 {
     public partial class SearchPage : ContentPage
     {
+        public string userInput;
+
         public SearchPage()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace POKEnhanced2
         //NAVIGATION BUTTONS: ===================================================================================================
         private async void byNameButton_Clicked(object sender, EventArgs e)
         {
+
             await Navigation.PushAsync(new SearchByNamePage());
         }
 

@@ -15,7 +15,7 @@ namespace PokemonData
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Pokemon
+    public partial class PokemonJSON
     {
         [JsonProperty("abilities")]
         public List<Ability> Abilities { get; set; }
