@@ -3,56 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="POKEnhanced2.SearchPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             BackgroundColor="Silver"
              >
     
-    
-     <StackLayout Spacing="15" Padding="15" HorizontalOptions="FillAndExpand">
+    <StackLayout HorizontalOptions="FillAndExpand">
       
-        <Label
-            Text="SEARCH:"
-            FontSize="Large"
-            TextColor="Maroon"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"
-            />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
         
-        <BoxView
-            Color="White"
-            HeightRequest="60"
-            />
-        
-        <Button
-            x:Name="byNameButton"
-            Text="By Name"
-            BackgroundColor="Maroon"
-            TextColor="White"
-            FontAttributes="Bold"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="250"
-            Clicked="byNameButton_Clicked"
-            />
-        
-        <Button
-            x:Name="byRegionButton"
-            Text="By Region"
-            BackgroundColor="Maroon"
-            TextColor="White"
-            FontAttributes="Bold"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="250"
-            Clicked="byRegionButton_Clicked"
-            />
-        
-        <Button
-            x:Name="ByNumberButton"
-            Text="By #"
-            BackgroundColor="Maroon"
-            TextColor="White"
-            FontAttributes="Bold"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="250"
-            Clicked="byNumberButton_Clicked"
-            />
+            <Label
+                Text="SEARCH:"
+                FontSize="Large"
+                TextColor="#1b9d9f"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Grid.Row="0"
+                Grid.Column="0"
+                />
+            
+            <Image
+                Source="http://enriqueae.com/mobile/ButtonBase.png"
+                Grid.Row="1"
+                Grid.Column="0"
+                WidthRequest="500"
+                HeightRequest="200"
+                />
+            
+            <Button
+                x:Name="searchByNameButton"
+                Text="By Name"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="250"
+                Clicked="byNameButton_Clicked"
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="Large"
+                />
+            
+            <Image
+                Source="http://enriqueae.com/mobile/ButtonBase.png"
+                Grid.Row="2"
+                Grid.Column="0"
+                WidthRequest="500"
+                HeightRequest="200"
+                />
+            
+            <Button
+                x:Name="searchByNumberButton"
+                Text="By Number"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="250"
+                Clicked="byNumberButton_Clicked"
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="Large"
+                />
+            
+            <Image
+                Source="http://enriqueae.com/mobile/ButtonBase.png"
+                Grid.Row="3"
+                Grid.Column="0"
+                WidthRequest="500"
+                HeightRequest="200"
+                />
+            
+            <Button
+                x:Name="searchByRegionButton"
+                Text="By Region"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="250"
+                Clicked="byRegionButton_Clicked"
+                Grid.Row="3"
+                Grid.Column="0"
+                FontSize="Large"
+                />
+            
+            </Grid>
         
         </StackLayout>
 </ContentPage>
