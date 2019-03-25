@@ -85,7 +85,7 @@
             
             <Button
                 x:Name="FavouritesButton"
-                Text="Favourites"
+                Text="Favorites"
                 TextColor="White"
                 FontAttributes="Bold"
                 HorizontalOptions="CenterAndExpand"

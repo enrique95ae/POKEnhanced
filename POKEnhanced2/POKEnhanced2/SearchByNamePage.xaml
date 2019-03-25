@@ -47,7 +47,10 @@
                 Grid.Row="2"
                 FontSize="Large"
                 FontAttributes="Bold"
+                Clicked="searchButton_Clicked"
                 />
+            
+            
             
             </Grid>
             
