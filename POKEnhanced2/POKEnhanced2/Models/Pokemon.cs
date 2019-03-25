@@ -5,7 +5,7 @@
     using System.Globalization;
     using PokemonData;
 
-    public class Pokemon
+    public class PokemonItem
     {
         public int ID { get; set; }
         public string name { get; set; }

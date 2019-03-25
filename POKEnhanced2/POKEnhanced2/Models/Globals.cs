@@ -7,7 +7,8 @@
 
     public static class GlobalVariables
     {
-        public static string searchByNameString = "";
+        public static string notFoundString = "Not Found";
+        public static string searchByNameString = "https://pokeapi.co/api/v2/pokemon/";
 
 
 
