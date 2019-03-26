@@ -8,19 +8,16 @@ namespace POKEnhanced2
 {
     public partial class PokemonPage : ContentPage
     {
-
-
-
         public PokemonPage(PokemonJson pokemonToUse)
         {
             InitializeComponent();
 
-            //handle if the pokemon only has one type.
-            //if(pokemonToUse.Types.Count == 1)
-            //{
-            //    pokemonToUse.Types.
-            //}
-            Console.WriteLine(pokemonToUse.Types.Count);
+
+            //handle if the pokemon only has one type. (duplicating it so index is not null in type check below for setting background colors)
+            if(pokemonToUse.Types.Count == 1)
+            {
+                pokemonToUse.Types.Add(pokemonToUse.Types[0]);
+            }
 
             pokemon_pic.Source = pokemonToUse.Sprites.FrontDefault;
             pokemonDescription_Label.Text = pokemonToUse.Moves.ToString();
@@ -37,6 +34,10 @@ namespace POKEnhanced2
             else if (pokemonToUse.Types[0].Type.Name == "fire" || pokemonToUse.Types[1].Type.Name == "fire")
             {
                 this.BackgroundColor = Color.FromHex("#ffad99");
+            }
+            else if (pokemonToUse.Types[0].Type.Name == "water" || pokemonToUse.Types[1].Type.Name == "water")
+            {
+                this.BackgroundColor = Color.FromHex("#b3f0ff");
             }
 
 
