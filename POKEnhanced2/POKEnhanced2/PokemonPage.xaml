@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="POKEnhanced2.PokemonPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
-             BackgroundColor="#ffe6ff"
              >
     
     <StackLayout>
@@ -42,7 +41,7 @@
                     Grid.ColumnSpan="2"
                     WidthRequest="250"
                     HeightRequest="250"
-                    Source="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+                    
                 />
                     
                 <Label
@@ -51,7 +50,6 @@
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     Grid.RowSpan="3"
-                    Text="Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared! Wild Ditto appeared!"
                     TextColor="Black"
                 />                   
                 

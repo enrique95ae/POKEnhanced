@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using PokemonObject;
     using PokemonData;
 
     public static class GlobalVariables
@@ -14,6 +13,11 @@
 
 
         //public static PokemonJson pokemonFromJSON;
-        public static ObservableCollection<PokemonItem> teamList;
+        public static ObservableCollection<PokemonJson> teamList;
+
+
+
+
+        public static string grass = "grass";
     }
 }
