@@ -4,6 +4,7 @@
     using System.Collections.ObjectModel;
 
     using PokemonObject;
+    using PokemonData;
 
     public static class GlobalVariables
     {
@@ -12,7 +13,7 @@
 
 
 
-
-        public static ObservableCollection<Pokemon> teamList;
+        //public static PokemonJson pokemonFromJSON;
+        public static ObservableCollection<PokemonItem> teamList;
     }
 }

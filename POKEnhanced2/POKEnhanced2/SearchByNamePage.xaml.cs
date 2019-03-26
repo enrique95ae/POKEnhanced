@@ -39,11 +39,22 @@ namespace POKEnhanced2
             string jsonContent = await response.Content.ReadAsStringAsync();
 
             //parse into an object of type PokemonJson
-            var pokemon = Pokemon.FromJson(jsonContent);
+            var pokemon = PokemonJson.FromJson(jsonContent);
 
-            if(jsonContent != globals.GlobalVariables.notFoundString)
+            if (jsonContent != globals.GlobalVariables.notFoundString)
             {
+                pokemonReady.ID = pokemon.Id;
+                pokemonReady.name = pokemon.Name;
+                pokemonReady.baseExp = pokemon.BaseExperience;
 
+                Console.WriteLine(pokemonReady.ID);
+                Console.WriteLine(pokemonReady.name);
+                Console.WriteLine(pokemonReady.baseExp);
+
+            }
+            else
+            {
+                await DisplayAlert("NOT FOUND", "Please try again!", "OK");
             }
 
 
@@ -53,7 +64,7 @@ namespace POKEnhanced2
 
 
 
-            await Navigation.PushAsync(new PokemonPage()); 
+            await Navigation.PushAsync(new PokemonPage(pokemonReady)); 
         }
     }
 }

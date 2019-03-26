@@ -4,7 +4,7 @@
 //
 //    using PokemonData;
 //
-//    var pokemon = Pokemon.FromJson(jsonString);
+//    var pokemonJson = PokemonJson.FromJson(jsonString);
 
 namespace PokemonData
 {
@@ -15,7 +15,7 @@ namespace PokemonData
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class PokemonJSON
+    public partial class PokemonJson
     {
         [JsonProperty("abilities")]
         public List<Ability> Abilities { get; set; }
@@ -33,7 +33,7 @@ namespace PokemonData
         public long Height { get; set; }
 
         [JsonProperty("held_items")]
-        public List<object> HeldItems { get; set; }
+        public List<HeldItem> HeldItems { get; set; }
 
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -94,6 +94,24 @@ namespace PokemonData
     {
         [JsonProperty("game_index")]
         public long GameIndexGameIndex { get; set; }
+
+        [JsonProperty("version")]
+        public Species Version { get; set; }
+    }
+
+    public partial class HeldItem
+    {
+        [JsonProperty("item")]
+        public Species Item { get; set; }
+
+        [JsonProperty("version_details")]
+        public List<VersionDetail> VersionDetails { get; set; }
+    }
+
+    public partial class VersionDetail
+    {
+        [JsonProperty("rarity")]
+        public long Rarity { get; set; }
 
         [JsonProperty("version")]
         public Species Version { get; set; }
@@ -168,14 +186,14 @@ namespace PokemonData
         public Species Type { get; set; }
     }
 
-    public partial class Pokemon
+    public partial class PokemonJson
     {
-        public static Pokemon FromJson(string json) => JsonConvert.DeserializeObject<Pokemon>(json, PokemonData.Converter.Settings);
+        public static PokemonJson FromJson(string json) => JsonConvert.DeserializeObject<PokemonJson>(json, PokemonData.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Pokemon self) => JsonConvert.SerializeObject(self, PokemonData.Converter.Settings);
+        public static string ToJson(this PokemonJson self) => JsonConvert.SerializeObject(self, PokemonData.Converter.Settings);
     }
 
     internal static class Converter

@@ -7,7 +7,7 @@
 
     public class PokemonItem
     {
-        public int ID { get; set; }
+        public long ID { get; set; }
         public string name { get; set; }
         public long baseExp { get; set; }
         public List<long> gameIndexes { get; set; }
