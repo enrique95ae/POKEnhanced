@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using PokemonData;
@@ -19,11 +20,22 @@ namespace POKEnhanced2
                 pokemonToUse.Types.Add(pokemonToUse.Types[0]);
             }
 
-            pokemon_pic.Source = pokemonToUse.Sprites.FrontDefault;
-            pokemonDescription_Label.Text = pokemonToUse.Moves.ToString();
-            pokemonName_Label.Text = pokemonToUse.Name;
-            pokemonBaseExp_Label.Text = pokemonToUse.BaseExperience.ToString();
+            //Capitalize the first letter of the pomemon's name
+            string UppercaseFirst(string s)
+            {
+                // Check for empty string.
+                if (string.IsNullOrEmpty(s))
+                {
+                    return string.Empty;
+                }
+                // Return char and concat substring.
+                return char.ToUpper(s[0]) + s.Substring(1);
+            }
 
+            pokemonName_Label.Text = UppercaseFirst(pokemonToUse.Name);
+
+            pokemon_pic.Source = pokemonToUse.Sprites.FrontDefault;
+            baseExp_Label.Text = pokemonToUse.BaseExperience.ToString();
 
             //checking pokemon types to set background color.
             if (pokemonToUse.Types[0].Type.Name == "grass" || pokemonToUse.Types[1].Type.Name == "grass")

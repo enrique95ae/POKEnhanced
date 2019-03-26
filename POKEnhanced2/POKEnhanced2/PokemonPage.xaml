@@ -3,132 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="POKEnhanced2.PokemonPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              >
     
-    <StackLayout>
-        <Grid Margin="0,15,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="4*"/>
-                <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-            
-            
+    <StackLayout Padding="15" Margin="15">
+        
                 <Label
                     x:Name="pokemonName_Label"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Grid.RowSpan="2"
                     Text=""
+                    FontSize="Large"
+                    FontAttributes="Bold"
                 />
             
                 <Image
                     x:Name="pokemon_pic"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="2"
                     WidthRequest="250"
                     HeightRequest="250"
-                    
                 />
-                    
-                <Label
-                    x:Name="pokemonDescription_Label"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="2"
-                    Grid.RowSpan="3"
-                    TextColor="Black"
-                />                   
-                
-            <!-- start type grid taking only one row -->
-                <Grid Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4">
+        
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                
+                    </Grid.RowDefinitions>
+            
                     <Label
-                        x:Name="type1_Label"
-                        Text="type1"
+                        Text="Base Experience: "
+                        FontAttributes="Bold"
                         Grid.Row="0"
                         Grid.Column="1"
+                        Grid.ColumnSpan="2"
                     />
-                
+            
                     <Label
-                        x:Name="type2_label"
-                        Text="type2"
+                        x:Name="baseExp_Label"
                         Grid.Row="0"
                         Grid.Column="3"
-                    />
-                    </Grid>
-             <!-- end type grid taking only one row -->
-            
+                    />    
+                </Grid>
+        
+                <ListView x:Name="movesListView" HeightRequest="50">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Label
+                                            Text="{Binding name}"
+                                        />
+                                    </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 
-             <!-- start movements grid taking only one row -->
-                <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="4" >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                
-                    <Label
-                        x:Name="movement1_Label"
-                        Text="move1"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                    />
-                
-                    <Label
-                        x:Name="movement2_label"
-                        Text="move2"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                    />
-                    </Grid>
-             <!-- end movements grid taking only one row -->
-            
-                <Label
-                    Text="Base Exp: "
-                    Grid.Row="7"
-                    Grid.Column="1"
-                />
-            
-                <Label
-                    x:Name="pokemonBaseExp_Label"
-                    Grid.Row="7"
-                    Grid.Column="2"
-                    Text=""
-                />
-            
-            </Grid>
+
         </StackLayout>
     
     
