@@ -24,9 +24,8 @@ namespace POKEnhanced2
             pokemonName_Label.Text = pokemonToUse.Name;
             pokemonBaseExp_Label.Text = pokemonToUse.BaseExperience.ToString();
 
-            Console.WriteLine(pokemonToUse.Types[0].Type.Name);
-            Console.WriteLine(pokemonToUse.Types[1].Type.Name);
 
+            //checking pokemon types to set background color.
             if (pokemonToUse.Types[0].Type.Name == "grass" || pokemonToUse.Types[1].Type.Name == "grass")
             {
                 this.BackgroundColor = Color.FromHex("#ccffcc");
@@ -38,6 +37,22 @@ namespace POKEnhanced2
             else if (pokemonToUse.Types[0].Type.Name == "water" || pokemonToUse.Types[1].Type.Name == "water")
             {
                 this.BackgroundColor = Color.FromHex("#b3f0ff");
+            }
+            else if (pokemonToUse.Types[0].Type.Name == "electric" || pokemonToUse.Types[1].Type.Name == "electric")
+            {
+                this.BackgroundColor = Color.FromHex("#ffff99");
+            }
+            else if (pokemonToUse.Types[0].Type.Name == "fairy" || pokemonToUse.Types[1].Type.Name == "fairy")
+            {
+                this.BackgroundColor = Color.FromHex("#ffe6ff");
+            }
+            else if (pokemonToUse.Types[0].Type.Name == "fighting" || pokemonToUse.Types[1].Type.Name == "fighting")
+            {
+                this.BackgroundColor = Color.FromHex("#e6ccb3");
+            }
+            else
+            {
+                this.BackgroundColor = Color.Silver;
             }
 
 
