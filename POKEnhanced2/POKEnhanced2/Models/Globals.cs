@@ -11,13 +11,6 @@
         public static string searchByNameString = "https://pokeapi.co/api/v2/pokemon/";
 
 
-
-        //public static PokemonJson pokemonFromJSON;
-        public static ObservableCollection<PokemonJson> teamList;
-
-
-
-
-        public static string grass = "grass";
+        public static ObservableCollection<PokemonJson> teamList { get; set; }
     }
 }

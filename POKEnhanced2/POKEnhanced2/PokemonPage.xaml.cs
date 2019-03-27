@@ -11,11 +11,11 @@ namespace POKEnhanced2
     {
         public ObservableCollection<string> movesList = new ObservableCollection<string>();
         public ObservableCollection<string> gamesList = new ObservableCollection<string>();
+        public PokemonJson pokemonToTeam;
 
         public PokemonPage(PokemonJson pokemonToUse)
         {
             InitializeComponent();
-
 
             //handle if the pokemon only has one type. (duplicating it so index is not null in type check below for setting background colors)
             if(pokemonToUse.Types.Count == 1)
@@ -98,7 +98,41 @@ namespace POKEnhanced2
                 this.BackgroundColor = Color.Silver;
             }
 
+            pokemonToTeam = pokemonToUse;
+        }
 
+        //adding a pokemon to the team button event
+        //checks for: duplicates and full team
+        private void addToTeamButton_Clicked(object sender, EventArgs e)
+        {
+            bool isInTeam = false;
+            if (globals.GlobalVariables.teamList.Count < 6)
+            {
+                if(globals.GlobalVariables.teamList.Count >= 0)
+                {
+                    for (int i = 0; i < globals.GlobalVariables.teamList.Count; i++)
+                    {
+                        if(globals.GlobalVariables.teamList[i].Name == pokemonToTeam.Name)
+                        {
+                            isInTeam = true;
+                        }
+                    }
+                     
+                    if(isInTeam == false)
+                    {
+                        globals.GlobalVariables.teamList.Add(pokemonToTeam);
+                    }
+                    else
+                    {
+                        DisplayAlert("Duplicate pokemon", "You already have this pokemon in your team.", "OK!");
+                        isInTeam = false;
+                    }
+                }
+            }
+            else
+            {
+                DisplayAlert("Full Team", "Please remove a pokemon from your team and try again.", "OK!");
+            }
         }
     }
 }

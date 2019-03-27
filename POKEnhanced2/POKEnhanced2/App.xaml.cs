@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.ObjectModel;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace POKEnhanced2
@@ -12,6 +13,7 @@ namespace POKEnhanced2
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage()); ;
+            globals.GlobalVariables.teamList = new ObservableCollection<PokemonData.PokemonJson>();
         }
 
         protected override void OnStart()

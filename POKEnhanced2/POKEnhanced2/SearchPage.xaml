@@ -6,95 +6,53 @@
              BackgroundColor="Silver"
              >
     
-    <StackLayout HorizontalOptions="FillAndExpand">
-      
-        <Grid>
+    <StackLayout>
+        <Grid HorizontalOptions="Center" VerticalOptions="Start" Margin="15" Padding="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
-        
+            
             <Label
-                Text="SEARCH:"
-                FontSize="Large"
+                Text="Search By Name:"
                 TextColor="#1b9d9f"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
                 Grid.Row="0"
-                Grid.Column="0"
-                />
-            
-            <Image
-                Source="http://enriqueae.com/mobile/ButtonBase.png"
-                Grid.Row="1"
-                Grid.Column="0"
-                WidthRequest="500"
-                HeightRequest="200"
-                />
-            
-            <Button
-                x:Name="searchByNameButton"
-                Text="By Name"
-                TextColor="White"
-                FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="250"
-                Clicked="byNameButton_Clicked"
-                Grid.Row="1"
-                Grid.Column="0"
+                HorizontalOptions="Center"
                 FontSize="Large"
+                FontAttributes="Bold"
+                />
+            
+            <Entry
+                x:Name="nameEntry"
+                Placeholder="Enter a name..."
+                Grid.Row="1"
+                BackgroundColor="Gray"
                 />
             
             <Image
                 Source="http://enriqueae.com/mobile/ButtonBase.png"
                 Grid.Row="2"
-                Grid.Column="0"
-                WidthRequest="500"
-                HeightRequest="200"
+                WidthRequest="200"
+                HeightRequest="75"
                 />
             
             <Button
-                x:Name="searchByNumberButton"
-                Text="By Number"
+                x:Name="searchButton"
+                Text="Search"
                 TextColor="White"
-                FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="250"
-                Clicked="byNumberButton_Clicked"
                 Grid.Row="2"
-                Grid.Column="0"
                 FontSize="Large"
-                />
-            
-            <Image
-                Source="http://enriqueae.com/mobile/ButtonBase.png"
-                Grid.Row="3"
-                Grid.Column="0"
-                WidthRequest="500"
-                HeightRequest="200"
-                />
-            
-            <Button
-                x:Name="searchByRegionButton"
-                Text="By Region"
-                TextColor="White"
                 FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="250"
-                Clicked="byRegionButton_Clicked"
-                Grid.Row="3"
-                Grid.Column="0"
-                FontSize="Large"
+                Clicked="searchButton_Clicked"
                 />
+            
+            
             
             </Grid>
-        
+            
         </StackLayout>
 </ContentPage>

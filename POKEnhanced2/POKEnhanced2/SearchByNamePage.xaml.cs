@@ -23,31 +23,39 @@ namespace POKEnhanced2
 
         async void searchButton_Clicked(object sender, EventArgs e)
         {
-            //getting input and constructing request url
-            string userInput;
-            userInput = nameEntry.Text.ToLower();
-
-            //seting up URI and creatting HTTP client and response holder
-            string nameApiEndpoint = globals.GlobalVariables.searchByNameString + userInput;
-            Uri nameApiUri = new Uri(nameApiEndpoint);
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(nameApiUri);
-
-            //response stream into string
-            string jsonContent = await response.Content.ReadAsStringAsync();
-
-            if (jsonContent != globals.GlobalVariables.notFoundString)
+            if(nameEntry.Text != null)
             {
-                //parse into an object of type PokemonJson
-                var pokemon = PokemonJson.FromJson(jsonContent);
+                //getting input and constructing request url
+                string userInput;
+                userInput = nameEntry.Text.ToLower();
 
-                //sending the object to the next page
-                await Navigation.PushAsync(new PokemonPage(pokemon));
+                //seting up URI and creatting HTTP client and response holder
+                string nameApiEndpoint = globals.GlobalVariables.searchByNameString + userInput;
+                Uri nameApiUri = new Uri(nameApiEndpoint);
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(nameApiUri);
+
+                //response stream into string
+                string jsonContent = await response.Content.ReadAsStringAsync();
+
+                if (jsonContent != globals.GlobalVariables.notFoundString)
+                {
+                    //parse into an object of type PokemonJson
+                    var pokemon = PokemonJson.FromJson(jsonContent);
+
+                    //sending the object to the next page
+                    await Navigation.PushAsync(new PokemonPage(pokemon));
+                }
+                else //pop up message if the pokemon doesn't exist
+                {
+                    await DisplayAlert("NOT FOUND", "Please try again!", "OK");
+                }
             }
-            else //pop up message if the 
+            else
             {
-                await DisplayAlert("NOT FOUND", "Please try again!", "OK");
+                await DisplayAlert("EMPTY FIELD", "Please enter a pokemon!", "OK");
             }
+
         }
     }
 }
