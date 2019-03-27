@@ -20,5 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\Pokemon.cs" />
+    <Compile Remove="SearchByNamePage.xaml.cs" />
+    <Compile Remove="SearchByNumberPage.xaml.cs" />
+    <Compile Remove="SearchByRegionPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="SearchByNamePage.xaml" />
+    <EmbeddedResource Remove="SearchByNumberPage.xaml" />
+    <EmbeddedResource Remove="SearchByRegionPage.xaml" />
   </ItemGroup>
 </Project>

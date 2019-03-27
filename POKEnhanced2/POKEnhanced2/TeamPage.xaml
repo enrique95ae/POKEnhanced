@@ -23,7 +23,7 @@
             
             <Label Margin="5"
                 x:Name="teamName_Label"
-                Text="Team: X"
+                Text="Team:"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"

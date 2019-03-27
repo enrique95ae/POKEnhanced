@@ -41,6 +41,8 @@ namespace POKEnhanced2
                     //parse into an object of type PokemonJson
                     var pokemon = PokemonJson.FromJson(jsonContent);
 
+                    globals.GlobalVariables.searchHistory.Add(pokemon);
+
                     //sending the object to the next page
                     await Navigation.PushAsync(new PokemonPage(pokemon));
                 }

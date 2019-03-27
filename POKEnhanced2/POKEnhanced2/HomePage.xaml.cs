@@ -12,7 +12,6 @@ namespace POKEnhanced2
             InitializeComponent();
         }
 
-
         //NAVIGATION BUTTONS: ===================================================================================================
         private async void teamButton_Clicked(object sender, EventArgs e)
         {

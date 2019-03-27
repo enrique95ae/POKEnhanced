@@ -14,6 +14,7 @@ namespace POKEnhanced2
 
             MainPage = new NavigationPage(new MainPage()); ;
             globals.GlobalVariables.teamList = new ObservableCollection<PokemonData.PokemonJson>();
+            globals.GlobalVariables.searchHistory = new ObservableCollection<PokemonData.PokemonJson>();
         }
 
         protected override void OnStart()

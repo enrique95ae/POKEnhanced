@@ -12,5 +12,7 @@
 
 
         public static ObservableCollection<PokemonJson> teamList { get; set; }
+        public static ObservableCollection<PokemonJson> searchHistory { get; set; }
+
     }
 }
