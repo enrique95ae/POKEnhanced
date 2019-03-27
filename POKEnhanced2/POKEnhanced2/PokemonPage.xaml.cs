@@ -9,6 +9,9 @@ namespace POKEnhanced2
 {
     public partial class PokemonPage : ContentPage
     {
+        public ObservableCollection<string> movesList = new ObservableCollection<string>();
+        public ObservableCollection<string> gamesList = new ObservableCollection<string>();
+
         public PokemonPage(PokemonJson pokemonToUse)
         {
             InitializeComponent();
@@ -32,10 +35,38 @@ namespace POKEnhanced2
                 return char.ToUpper(s[0]) + s.Substring(1);
             }
 
+            //setting pokemon's name
             pokemonName_Label.Text = UppercaseFirst(pokemonToUse.Name);
 
+            //setting pokemon's pictures
             pokemon_pic.Source = pokemonToUse.Sprites.FrontDefault;
+
+            //setting pokemon's base experience
             baseExp_Label.Text = pokemonToUse.BaseExperience.ToString();
+
+            //setting pokemon's types
+            type1_Label.Text = UppercaseFirst(pokemonToUse.Types[1].Type.Name);
+            type2_Label.Text = UppercaseFirst(pokemonToUse.Types[0].Type.Name);
+
+            //settings pokemon's weight and height
+            weight_Label.Text = UppercaseFirst(pokemonToUse.Weight.ToString());
+            height_Label.Text = UppercaseFirst(pokemonToUse.Height.ToString());
+
+            //setting and populating the moves list: #############################################
+            movesListView.ItemsSource = movesList;
+            for (int i = 0; i<pokemonToUse.Moves.Count; i++)
+            {
+                movesList.Add(UppercaseFirst(pokemonToUse.Moves[i].MoveMove.Name));
+            }
+            //####################################################################################
+
+            //setting the games list: ############################################################
+            gamesListView.ItemsSource = gamesList;
+            for(int i=0; i<pokemonToUse.GameIndices.Count; i++)
+            {
+                gamesList.Add(UppercaseFirst(pokemonToUse.GameIndices[i].Version.Name));
+            }
+            //####################################################################################
 
             //checking pokemon types to set background color.
             if (pokemonToUse.Types[0].Type.Name == "grass" || pokemonToUse.Types[1].Type.Name == "grass")

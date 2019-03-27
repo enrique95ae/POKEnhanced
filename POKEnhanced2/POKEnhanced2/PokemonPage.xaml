@@ -6,14 +6,39 @@
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              >
     
-    <StackLayout Padding="15" Margin="15">
+    <StackLayout Padding="15" Margin="15" VerticalOptions="FillAndExpand">
         
-                <Label
-                    x:Name="pokemonName_Label"
-                    Text=""
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                />
+                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+               
+                    <Label
+                        x:Name="pokemonName_Label"
+                        Text=""
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                    />
+            
+                    <Image
+                        x:Name="isFavorite_Button"
+                        Source="https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-132_star_off-512.png"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                    />
+            
+                </Grid>
+        
             
                 <Image
                     x:Name="pokemon_pic"
@@ -48,20 +73,120 @@
                     />    
                 </Grid>
         
-                <ListView x:Name="movesListView" HeightRequest="50">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <ViewCell.View>
-                                        <Label
-                                            Text="{Binding name}"
-                                        />
-                                    </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <Label
+                    Text="Possible Moves: "
+                    FontAttributes="Bold"
+                />
+                
+                <ListView x:Name="movesListView" HeightRequest="50" RowHeight="20">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                        </x:Array>
+                    </ListView.ItemsSource>
                 </ListView>
                 
+                <Label
+                    Text="Game versions: "
+                    FontAttributes="Bold"
+                />
+        
+                <ListView x:Name="gamesListView" HeightRequest="50" RowHeight="20" >
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+        
+                <Grid HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>  
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+            
+                    <Label
+                        Text="Type 1: "
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                    />
+            
+                    <Label
+                        x:Name="type1_Label"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                    />
+        
+                    <Label
+                        Text="Type 2: "
+                        FontAttributes="Bold"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                    />
+            
+                    <Label
+                        x:Name="type2_Label"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                    />
+            
+                    <Label
+                        Text="Height: "
+                        FontAttributes="Bold"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                    />
+        
+                    <Label
+                        x:Name="height_Label"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                    />
+        
+                    <Label
+                        Text="Weight: "
+                        FontAttributes="Bold"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                    />
+            
+                    <Label
+                        x:Name="weight_Label"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                    />
+            
+                   <Button
+                        x:Name="AddToTeam_Button"
+                        Text="Add to my team"
+                        BackgroundColor="#1b9d9f"
+                        TextColor="White"
+                        CornerRadius="15"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                    />
+                    
+                </Grid>
+        
+        
+
 
         </StackLayout>
     
