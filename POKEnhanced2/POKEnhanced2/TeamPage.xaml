@@ -41,6 +41,14 @@
                 WidthRequest="150"
                 HeightRequest="150"
                 />
+            
+            <ImageButton
+                x:Name="pok1_button"
+                Grid.Row="1"
+                Grid.Column="1"
+                HeightRequest="150"
+                WidthRequest="150"
+                />
            
             <BoxView
                 Grid.Row="1"
@@ -51,6 +59,14 @@
                 HeightRequest="150"
                 />
             
+            <ImageButton
+                x:Name="pok2_button"
+                Grid.Row="1"
+                Grid.Column="2"
+                HeightRequest="150"
+                WidthRequest="150"
+                />
+            
              <BoxView
                 Grid.Row="2"
                 Grid.Column="1"
@@ -60,6 +76,14 @@
                 HeightRequest="150"
                 />
             
+             <ImageButton
+                x:Name="pok3_button"
+                Grid.Row="2"
+                Grid.Column="1"
+                HeightRequest="150"
+                WidthRequest="150"
+                />
+            
              <BoxView
                 Grid.Row="2"
                 Grid.Column="2"
@@ -67,6 +91,14 @@
                 BackgroundColor="White"
                 WidthRequest="150"
                 HeightRequest="150"
+                />
+            
+            <ImageButton
+                x:Name="pok4_button"
+                Grid.Row="2"
+                Grid.Column="2"
+                HeightRequest="150"
+                WidthRequest="150"
                 />
             
             <BoxView
@@ -78,6 +110,14 @@
                 HeightRequest="150"
                 />
             
+            <ImageButton
+                x:Name="pok5_button"
+                Grid.Row="3"
+                Grid.Column="1"
+                HeightRequest="150"
+                WidthRequest="150"
+                />
+            
              <BoxView
                 Grid.Row="3"
                 Grid.Column="2"
@@ -87,6 +127,13 @@
                 HeightRequest="150"
                 />
             
+             <ImageButton
+                x:Name="pok6_button"
+                Grid.Row="3"
+                Grid.Column="2"
+                HeightRequest="150"
+                WidthRequest="150"
+                />
             
             
             </Grid>
