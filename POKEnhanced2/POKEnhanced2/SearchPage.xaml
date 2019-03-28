@@ -18,7 +18,7 @@
                 </Grid.RowDefinitions>
             
             <Label
-                Text="Search By Name:"
+                Text="What pokemon are you looking for?"
                 TextColor="#1b9d9f"
                 Grid.Row="0"
                 HorizontalOptions="Center"
@@ -28,7 +28,7 @@
             
             <Entry
                 x:Name="nameEntry"
-                Placeholder="Enter a name..."
+                Placeholder="Enter a name or a pokedex index..."
                 Grid.Row="1"
                 BackgroundColor="Gray"
                 />

@@ -309,27 +309,27 @@ namespace POKEnhanced2
             }
         }
 
-        async void delete1_Clicked(object sender, EventArgs e)
+        void delete1_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(0);
         }
-        async void delete2_Clicked(object sender, EventArgs e)
+        void delete2_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(1);
         }
-        async void delete3_Clicked(object sender, EventArgs e)
+        void delete3_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(2);
         }
-        async void delete4_Clicked(object sender, EventArgs e)
+        void delete4_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(3);
         }
-        async void delete5_Clicked(object sender, EventArgs e)
+        void delete5_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(4);
         }
-        async void delete6_Clicked(object sender, EventArgs e)
+        void delete6_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(5);
         }
