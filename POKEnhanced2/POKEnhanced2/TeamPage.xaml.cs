@@ -15,6 +15,12 @@ namespace POKEnhanced2
             InitializeComponent();
 
             edit_Button.Text = "Edit";
+            delete1_button.IsEnabled = false;
+            delete2_button.IsEnabled = false;
+            delete3_button.IsEnabled = false;
+            delete4_button.IsEnabled = false;
+            delete5_button.IsEnabled = false;
+            delete6_button.IsEnabled = false;
 
             //adding the pokemons in the slots in the page. CHANGE THIS WITH A SWITCH STATEMENT OR MAKE IT CLEANER
             if (globals.GlobalVariables.teamList.Count == 0)
@@ -88,37 +94,37 @@ namespace POKEnhanced2
             }
         }
 
-        async void pokemon1_Clicked(object sender, EventArgs e)
+        void pokemon1_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[0].Name);
         }
 
-        async void pokemon2_Clicked(object sender, EventArgs e)
+        void pokemon2_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[1].Name);
         }
 
-        async void pokemon3_Clicked(object sender, EventArgs e)
+        void pokemon3_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[2].Name);
         }
 
-        async void pokemon4_Clicked(object sender, EventArgs e)
+        void pokemon4_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[3].Name);
         }
 
-        async void pokemon5_Clicked(object sender, EventArgs e)
+        void pokemon5_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[4].Name);
         }
 
-        async void pokemon6_Clicked(object sender, EventArgs e)
+        void pokemon6_Clicked(object sender, EventArgs e)
         {
             openPokemonPage(globals.GlobalVariables.teamList[5].Name);
         }
 
-        async void editButton_Clicked(object sender, EventArgs e)
+        void editButton_Clicked(object sender, EventArgs e)
         {
             if(edit_Button.Text == "Edit")
             {
@@ -309,27 +315,27 @@ namespace POKEnhanced2
             }
         }
 
-        void delete1_Clicked(object sender, EventArgs e)
+        async void delete1_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(0);
         }
-        void delete2_Clicked(object sender, EventArgs e)
+        async void delete2_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(1);
         }
-        void delete3_Clicked(object sender, EventArgs e)
+        async void delete3_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(2);
         }
-        void delete4_Clicked(object sender, EventArgs e)
+        async void delete4_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(3);
         }
-        void delete5_Clicked(object sender, EventArgs e)
+        async void delete5_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(4);
         }
-        void delete6_Clicked(object sender, EventArgs e)
+        async void delete6_Clicked(object sender, EventArgs e)
         {
             globals.GlobalVariables.teamList.RemoveAt(5);
         }
