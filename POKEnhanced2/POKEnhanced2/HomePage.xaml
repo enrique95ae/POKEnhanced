@@ -90,7 +90,7 @@
                 FontAttributes="Bold"
                 HorizontalOptions="CenterAndExpand"
                 WidthRequest="250"
-                Clicked="newsButton_Clicked"
+                Clicked="favoritesButton_Clicked"
                 Image="http://enriqueae.com/mobile/ButtonBase.png"
                 Grid.Row="3"
                 Grid.Column="0"

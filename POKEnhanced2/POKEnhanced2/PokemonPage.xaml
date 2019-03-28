@@ -27,13 +27,13 @@
                         Grid.Column="1"
                     />
             
-                    <Image
+                    <ImageButton
                         x:Name="isFavorite_Button"
-                        Source="https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-132_star_off-512.png"
                         HeightRequest="30"
                         WidthRequest="30"
                         Grid.Row="0"
                         Grid.Column="2"
+                        Clicked="favoriteButton_Clicked"
                     />
             
                 </Grid>

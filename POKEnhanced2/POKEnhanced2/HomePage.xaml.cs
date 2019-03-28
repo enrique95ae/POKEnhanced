@@ -23,9 +23,9 @@ namespace POKEnhanced2
             await Navigation.PushAsync(new HistoryPage());
         }
 
-        private async void newsButton_Clicked(object sender, EventArgs e)
+        private async void favoritesButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewsPage());
+            await Navigation.PushAsync(new FavoritesPage());
         }
         //=======================================================================================================================
 

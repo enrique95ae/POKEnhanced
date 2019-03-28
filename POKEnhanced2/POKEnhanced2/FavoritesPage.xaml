@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="POKEnhanced2.FavoritesPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             BackgroundColor="Silver"
+             >
+             
+            <StackLayout>
+        
+            <Label
+                Text="Your favorites: "
+                TextColor="#1b9d9f"
+                FontSize="Large"
+            />
+        
+            <ListView x:Name="favoritesListView" BackgroundColor="Silver">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*"/>
+                                        <ColumnDefinition Width="7*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                
+                                    <Image
+                                        x:Name="pokemonPic"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                            Source="{Binding url}"
+                                        />
+                                
+                                    <Label
+                                        x:Name="pokemonName_Label"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Text="{Binding name}"
+                                        />
+                              
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        
+        </StackLayout>
+</ContentPage>
