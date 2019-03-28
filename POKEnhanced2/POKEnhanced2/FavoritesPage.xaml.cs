@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
+using PokemonData;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -8,40 +11,23 @@ namespace POKEnhanced2
 {
     public partial class FavoritesPage : ContentPage
     {
-        public class favoriteItem
-        {
-            public string url { get; set; }
-            public string name { get; set; }
-        }
-
-        public ObservableCollection<favoriteItem> favoritesListViewSource = new ObservableCollection<favoriteItem>();
+        public ObservableCollection<PokemonJson> favoritesListViewSource = new ObservableCollection<PokemonJson>();
         
         public FavoritesPage()
         {
             InitializeComponent();
+
+            favoritesListViewSource = globals.GlobalVariables.favoritesList;
+
             favoritesListView.ItemsSource = favoritesListViewSource;
-            favoriteItem pokemonFavorited = new favoriteItem();
+        }
 
-            //Capitalize the first letter of the pomemon's name
-            string UppercaseFirst(string s)
-            {
-                // Check for empty string.
-                if (string.IsNullOrEmpty(s))
-                {
-                    return string.Empty;
-                }
-                // Return char and concat substring.
-                return char.ToUpper(s[0]) + s.Substring(1);
-            }
-
-
-            for (int i = 0; i < globals.GlobalVariables.favoritesList.Count; i++)
-            {
-                pokemonFavorited.name = UppercaseFirst(globals.GlobalVariables.favoritesList[i].Name);
-                pokemonFavorited.url = globals.GlobalVariables.favoritesList[i].Sprites.FrontDefault.ToString();
-
-                favoritesListViewSource.Insert(0, pokemonFavorited);
-            }
+        void Handle_DeletePokemon(object sender, EventArgs e)
+        {
+            var menuItem = (MenuItem)sender;
+            var pokemonDelete = (PokemonJson)menuItem.CommandParameter;
+            favoritesListViewSource.Remove(pokemonDelete);
+            globals.GlobalVariables.favoritesList.Remove(pokemonDelete);
         }
     }
 }

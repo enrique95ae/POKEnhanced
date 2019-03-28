@@ -12,6 +12,7 @@
                 Text="Your favorites: "
                 TextColor="#1b9d9f"
                 FontSize="Large"
+                HorizontalOptions="Center"
             />
         
             <ListView x:Name="favoritesListView" BackgroundColor="Silver">
@@ -32,18 +33,28 @@
                                         x:Name="pokemonPic"
                                         Grid.Row="0"
                                         Grid.Column="0"
-                                            Source="{Binding url}"
+                                            Source="{Binding Sprites.FrontDefault}"
                                         />
                                 
                                     <Label
                                         x:Name="pokemonName_Label"
                                         Grid.Row="0"
                                         Grid.Column="1"
-                                        Text="{Binding name}"
+                                        Text="{Binding Name}"
                                         />
                               
                                 </Grid>
                             </ViewCell.View>
+                        
+                           <ViewCell.ContextActions>
+                                <MenuItem
+                                    Text="Delete"
+                                    Clicked="Handle_DeletePokemon"
+                                    IsDestructive="True"
+                                    CommandParameter="{Binding .}"
+                                />
+                            </ViewCell.ContextActions>
+                        
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
