@@ -14,7 +14,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="Xam.Plugin.MultiGestureView" Version="1.0.2" />
+    <PackageReference Include="Plugin.Twitter" Version="1.0.1" />
+    <PackageReference Include="linqtotwitter" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -24,6 +25,7 @@
     <Compile Remove="SearchByNamePage.xaml.cs" />
     <Compile Remove="SearchByNumberPage.xaml.cs" />
     <Compile Remove="SearchByRegionPage.xaml.cs" />
+    <Compile Remove="Models\TwitterViewPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="SearchByNamePage.xaml" />

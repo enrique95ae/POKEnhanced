@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using tweetData;
+﻿using Xamarin.Forms;
 using XamarinForms.ViewModels;
 
-using Xamarin.Forms;
-
-namespace POKEnhanced2
+namespace XamarinForms.Views
 {
-    public partial class NewsPage : ContentPage
+    public class TwitterViewPage : ContentPage
     {
-        public NewsPage()
+
+        public TwitterViewPage()
         {
 
             Title = "Twitter";

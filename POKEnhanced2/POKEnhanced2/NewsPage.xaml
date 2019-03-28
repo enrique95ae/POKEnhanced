@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="POKEnhanced2.NewsPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             xmlns:Models="clr-namespace:XamarinForms.Models;assembly=XamarinForms"
              BackgroundColor="Silver"
+             Title="Twitter"
              >
-    <ContentPage.Content>
-    </ContentPage.Content>
+
+
 </ContentPage>
