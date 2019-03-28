@@ -8,6 +8,10 @@ This app uses two API for retrieving data:
 
 -Twitter's API
 
+## Demo
+
+[YouTube demo](https://www.youtube.com/watch?v=J47x2hurhxM&feature=youtu.be)
+
 ## Installation
 
 Not available on the store. In order to test this app you need to run it in a emulator. 
@@ -16,6 +20,16 @@ Not available on the store. In order to test this app you need to run it in a em
 ```bash
 Clone the project > open the .sln file in visual studio > run it.
 ```
+
+If for some reason it doesnt work make sure to do:
+
+-Delete bin and obj folders.
+
+-Solution > clean solution.
+
+-Dependencies > NuGets > Restore NuGets
+
+-Rebuild solution.
 
 ## NuGets
 Newtonsoft.Json -> Json deserializing
