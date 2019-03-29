@@ -6,6 +6,7 @@
              BackgroundColor="Silver"
              Title="Twitter"
              >
-
+             
+    <!-- Format is set in the cs file -->
 
 </ContentPage>

@@ -14,7 +14,7 @@ namespace POKEnhanced2
     {
         public NewsPage()
         {
-
+            //setting up the news page here instead of by using the xaml page.
             Title = "Twitter";
             BackgroundColor = Color.White;
 
