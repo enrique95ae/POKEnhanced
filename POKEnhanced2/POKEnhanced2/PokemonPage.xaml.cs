@@ -184,7 +184,7 @@ namespace POKEnhanced2
             }
 
             //if is not in the team we add it
-            if(isFavorite == false)
+            if (isFavorite == false)
             {
                 globals.GlobalVariables.favoritesList.Insert(0, pokemonToTeam);
                 isFavorite_Button.Source = "https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/198_star_favorite_vote_achievement-512.png";
