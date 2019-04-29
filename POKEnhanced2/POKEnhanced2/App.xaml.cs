@@ -20,7 +20,7 @@ namespace POKEnhanced2
 
         protected override void OnStart()
         {
-            // Handle when your app starts  
+            // Handle when your app starts   
         }
 
         protected override void OnSleep()
