@@ -34,7 +34,6 @@ namespace POKEnhanced2
 
             this.Content = barcode;
             stackPrinc.Children.Add(barcode);
-            //qrResult.BarcodeValue = barcode;
 
         }
 

@@ -2,9 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="POKEnhanced2.PokemonPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
              >
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <xamanimation:ShakeAnimation
+                    x:Key="ShakeAnimation"
+                    Target="{x:Reference AddToTeam_Button}"
+                />
+            </ResourceDictionary>
+        </ContentPage.Resources>
     
+        <ContentPage.Triggers>
+            <EventTrigger Event="Appearing">
+                <xamanimation:BeginAnimation
+                    Animation="{StaticResource ShakeAnimation}"
+                />
+            </EventTrigger>
+        </ContentPage.Triggers>
+    
+    
+        
     <StackLayout Padding="15" Margin="15" VerticalOptions="FillAndExpand">
         
                  <Grid>

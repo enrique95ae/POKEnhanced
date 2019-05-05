@@ -6,7 +6,7 @@
              >
     
     
-    <ScrollView>
+    <ScrollView BackgroundColor="Silver">
         <StackLayout Padding="10" x:Name="stackPrinc">
             <zxing:ZXingBarcodeImageView x:Name="qrResult" BarcodeFormat="QR_CODE">
             </zxing:ZXingBarcodeImageView>
