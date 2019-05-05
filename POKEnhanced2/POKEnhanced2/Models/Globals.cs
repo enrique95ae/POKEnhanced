@@ -16,5 +16,7 @@
         public static ObservableCollection<PokemonJson> teamList { get; set; }
         public static ObservableCollection<PokemonJson> searchHistory { get; set; }
         public static ObservableCollection<PokemonJson> favoritesList { get; set; }
+
+        public static string endpoint;
     }
 }

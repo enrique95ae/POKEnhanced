@@ -90,7 +90,7 @@ namespace POKEnhanced2
                 globals.GlobalVariables.searchHistory.Add(pokemon);
 
                 //sending the object to the next page
-                await Navigation.PushAsync(new PokemonPage(pokemon));
+                await Navigation.PushAsync(new PokemonPage(pokemon, globals.GlobalVariables.endpoint));
             }
         }
 

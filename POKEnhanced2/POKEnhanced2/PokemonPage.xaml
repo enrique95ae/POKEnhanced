@@ -182,6 +182,16 @@
                         Grid.ColumnSpan="2"
                         Clicked="addToTeamButton_Clicked"
                     />
+            
+                    <Button
+                        x:Name="QR_Button"
+                        Text="QR code"
+                        TextColor="Black"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Clicked="QR_Clicked"
+                    />
                     
                 </Grid>
         
