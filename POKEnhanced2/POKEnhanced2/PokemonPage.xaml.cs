@@ -13,10 +13,13 @@ namespace POKEnhanced2
         public ObservableCollection<string> gamesList = new ObservableCollection<string>();
         public PokemonJson pokemonToTeam;
         public bool isFavorite = false;
+        public string theEndpoint;
 
-        public PokemonPage(PokemonJson pokemonToUse)
+        public PokemonPage(PokemonJson pokemonToUse, string endpoint)
         {
             InitializeComponent();
+
+            theEndpoint = endpoint;
 
             //set the favorite button depending if the pokemon is already in the team or not.
             for(int i=0; i<globals.GlobalVariables.favoritesList.Count; i++)
@@ -196,6 +199,11 @@ namespace POKEnhanced2
             }
 
             isFavorite = false;
+        }
+
+        private async void QR_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QRpage(theEndpoint));
         }
     }
 }

@@ -29,6 +29,7 @@ namespace POKEnhanced2
 
                 //seting up URI and creatting HTTP client and response holder
                 string nameApiEndpoint = globals.GlobalVariables.searchByNameString + userInput;
+                globals.GlobalVariables.endpoint = nameApiEndpoint;
                 Uri nameApiUri = new Uri(nameApiEndpoint);
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(nameApiUri);
@@ -44,7 +45,7 @@ namespace POKEnhanced2
                     globals.GlobalVariables.searchHistory.Add(pokemon);
 
                     //sending the object to the next page
-                    await Navigation.PushAsync(new PokemonPage(pokemon));
+                    await Navigation.PushAsync(new PokemonPage(pokemon, nameApiEndpoint));
                 }
                 else //pop up message if the pokemon doesn't exist
                 {

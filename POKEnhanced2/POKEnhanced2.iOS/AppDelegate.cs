@@ -22,7 +22,11 @@ namespace POKEnhanced2.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
             global::Xamarin.Forms.Forms.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
