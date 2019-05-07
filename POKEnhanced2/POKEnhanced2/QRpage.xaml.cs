@@ -7,7 +7,7 @@ using ZXing.Common;
 using ZXing.OneD;
 using ZXing.Net.Mobile.Forms;
 using ZXing;
-//using System.Drawing; 
+// using System.Drawing; 
 
 namespace POKEnhanced2
 {
@@ -15,7 +15,7 @@ namespace POKEnhanced2
     {
         ZXingBarcodeImageView barcode;  
 
-        public QRpage(string incUrl)
+        public QRpage( string incUrl)
         {
             InitializeComponent();
 

@@ -21,13 +21,14 @@ namespace POKEnhanced2
 
             theEndpoint = endpoint;
 
-            //set the favorite button depending if the pokemon is already in the team or not.
+            
+            //sets the favorite button. Depending on whether the pokemon is on the team already or not. 
             for(int i=0; i<globals.GlobalVariables.favoritesList.Count; i++)
             {
                 if(pokemonToUse.Name == globals.GlobalVariables.favoritesList[i].Name)
                 {
                     isFavorite = true;
-                    break; //no need to keep looping through the list
+                    break; //loop is no longer needed at this point
                 }
                 else
                 {
@@ -42,46 +43,48 @@ namespace POKEnhanced2
             else
             {
                 isFavorite_Button.Source = "https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/198_star_favorite_vote_achievement-512.png";
-            }
+            }   
 
             isFavorite = false;
 
-            //handle if the pokemon only has one type. (duplicating it so index is not null in type check below for setting background colors)
-            if (pokemonToUse.Types.Count == 1)
+            // handle if the pokemon only has a single type. ( duplicating it so index is not null in type check below for setting background colors )
+            if (pokemonToUse.Types.Count == 1 )
             {
-                pokemonToUse.Types.Add(pokemonToUse.Types[0]);
+                pokemonToUse.Types.Add( pokemonToUse.Types[0] );
             }
 
-            //Capitalize the first letter of the pomemon's name
+            //Capitalize the first letter of the pokemon's name
             string UppercaseFirst(string s)
             {
-                // Check for empty string.
+                // Checking for an empty string.
                 if (string.IsNullOrEmpty(s))
                 {
                     return string.Empty;
                 }
-                // Return char and concat substring.
-                return char.ToUpper(s[0]) + s.Substring(1);
+                //Return char and concatinate substring.
+                return char.ToUpper(s[0]) + s.Substring( 1 );
             }
 
-            //setting pokemon's name
+            //sets pokemon's name
             pokemonName_Label.Text = UppercaseFirst(pokemonToUse.Name);
 
-            //setting pokemon's pictures
+            //sets pokemon's pictures
             pokemon_pic.Source = pokemonToUse.Sprites.FrontDefault;
 
-            //setting pokemon's base experience
+            //sets pokemon's base experience
             baseExp_Label.Text = pokemonToUse.BaseExperience.ToString();
 
-            //setting pokemon's types
+            //sets pokemon's types
             type1_Label.Text = UppercaseFirst(pokemonToUse.Types[1].Type.Name);
+
             type2_Label.Text = UppercaseFirst(pokemonToUse.Types[0].Type.Name);
 
-            //settings pokemon's weight and height
+            //sets pokemon's weight and height
             weight_Label.Text = UppercaseFirst(pokemonToUse.Weight.ToString());
+
             height_Label.Text = UppercaseFirst(pokemonToUse.Height.ToString());
 
-            //setting and populating the moves list: #############################################
+            //sets and populating the moves list: #############################################
             movesListView.ItemsSource = movesList;
             for (int i = 0; i<pokemonToUse.Moves.Count; i++)
             {
@@ -89,15 +92,15 @@ namespace POKEnhanced2
             }
             //####################################################################################
 
-            //setting the games list: ############################################################
+            //sets the games list: ############################################################
             gamesListView.ItemsSource = gamesList;
-            for(int i=0; i<pokemonToUse.GameIndices.Count; i++)
+            for( int i=0; i<pokemonToUse.GameIndices.Count; i++)
             {
                 gamesList.Add(UppercaseFirst(pokemonToUse.GameIndices[i].Version.Name));
             }
             //####################################################################################
 
-            //checking pokemon types to set background color.
+            //checks pokemon types to set background color.
             if (pokemonToUse.Types[0].Type.Name == "grass" || pokemonToUse.Types[1].Type.Name == "grass")
             {
                 this.BackgroundColor = Color.FromHex("#ccffcc");
@@ -130,55 +133,55 @@ namespace POKEnhanced2
             pokemonToTeam = pokemonToUse;
         }
 
-        //adding a pokemon to the team button event
-        //checks for: duplicates and full team
+        //adds a pokemon to the team button event
+        //checks for duplicates and full team
         private void addToTeamButton_Clicked(object sender, EventArgs e)
         {
             bool isInTeam = false;
-            if (globals.GlobalVariables.teamList.Count < 6) //while there is space in the team
+            if (globals.GlobalVariables.teamList.Count < 6) //while there is space left in the team
             {
                 if(globals.GlobalVariables.teamList.Count >= 0) 
                 {
-                    //interact through as many times as pokemons are in the team list
+                    //interact through as many times as pokemon are in the team list
                     for (int i = 0; i < globals.GlobalVariables.teamList.Count; i++) 
                     {
-                        //if the current pokemon is already in the team
+                        //if the current pokemon is already in the teams  
                         if(globals.GlobalVariables.teamList[i].Name == pokemonToTeam.Name)
                         {
-                            //we set the flag to true and jump to the deciding if adding logic
+                            //sets the flag to true and jump to the deciding if adding logic
                             isInTeam = true;
                         }
                     }
 
-                    //deciding if adding or not logic according to our flag: isInTeam 
-                    if(isInTeam == false) //add it to team if this pokemon isn't already in the team
+                    //deciding if adding or not logic according to the flag:  isInTeam 
+                    if(isInTeam == false) //add it to team if this pokemon is not already in the team
                     {
                         globals.GlobalVariables.teamList.Add(pokemonToTeam);
-                        DisplayAlert("Success!", pokemonToTeam.Name + " was added to your team!" , "OK!");
+                        DisplayAlert("Success!", pokemonToTeam.Name + " was added to your team! " , "OK!");
                     }
-                    else //if already in the team, show an error message and reset the flag for future additions.
+                    else // if already in the team, show an error message and reset the flag for future additions
                     {
-                        DisplayAlert("Duplicate pokemon", "You already have this pokemon in your team.", "OK!");
+                        DisplayAlert("Duplicate pokemon", "You already have this pokemon in your team. ", "OK!");
                         isInTeam = false;
                     }
                 }
             }
             else
             {
-                DisplayAlert("Full Team", "Please remove a pokemon from your team and try again.", "OK!");
+                DisplayAlert("Full Team", "Please remove a pokemon from your team and try again. ", "OK!");
             }
         }
 
-        //logic for adding a pokemon to the favorites list and updating the button's look
+        //logic for adding a pokemon to the favorites list and updating the button's look.
         private void favoriteButton_Clicked(object sender, EventArgs e)
         {
-            //first we check if it already is in the team
+            // first we check if it already is in the team.   
             for (int i = 0; i < globals.GlobalVariables.favoritesList.Count; i++)
             {
                 if (pokemonToTeam.Name == globals.GlobalVariables.favoritesList[i].Name)
                 {
                     isFavorite = true;
-                    break; //no need to keep looping through the list
+                    break; // there is no need to keep looping through the list
                 }
                 else
                 {
@@ -186,13 +189,13 @@ namespace POKEnhanced2
                 }
             }
 
-            //if is not in the team we add it
+            // if is not in the team we add it.
             if (isFavorite == false)
             {
                 globals.GlobalVariables.favoritesList.Insert(0, pokemonToTeam);
                 isFavorite_Button.Source = "https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/198_star_favorite_vote_achievement-512.png";
             }
-            //if it is in the team, update pic.
+            // if it is in the team, update pic
             else
             {
                 isFavorite_Button.Source = "https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/198_star_favorite_vote_achievement-512.png";
@@ -203,7 +206,7 @@ namespace POKEnhanced2
 
         private async void QR_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QRpage(theEndpoint));
+            await Navigation.PushAsync(new QRpage( theEndpoint));
         }
     }
 }

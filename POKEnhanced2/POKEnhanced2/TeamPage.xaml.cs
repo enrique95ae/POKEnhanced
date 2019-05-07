@@ -22,18 +22,18 @@ namespace POKEnhanced2
             delete5_button.IsEnabled = false;
             delete6_button.IsEnabled = false;
 
-            //adding the pokemons in the slots in the page. CHANGE THIS WITH A SWITCH STATEMENT OR MAKE IT CLEANER
+            //adding the pokemon into the slots in the page. CHANGE THIS WITH A SWITCH STATEMENT OR MAKE IT CLEANER.  
             if (globals.GlobalVariables.teamList.Count == 0)
             {
-                DisplayAlert("Empty Team", "You haven't added any pokemons to your team yet. Please add a pokemon and come back after.", "OK!");
+                DisplayAlert("Empty Team", "You haven't added any pokemons to your team yet. Please add a pokemon and come back after. ", "OK!");
             }
             else
             {
-                if(globals.GlobalVariables.teamList.Count == 1)
+                if( globals.GlobalVariables.teamList.Count == 1)
                 {
                     pok1_button.Source = globals.GlobalVariables.teamList[0].Sprites.FrontDefault;
                 }
-                else if (globals.GlobalVariables.teamList.Count == 2)
+                else if ( globals.GlobalVariables.teamList.Count == 2)
                 {
                     pok1_button.Source = globals.GlobalVariables.teamList[0].Sprites.FrontDefault;
                     pok2_button.Source = globals.GlobalVariables.teamList[1].Sprites.FrontDefault;
@@ -44,7 +44,7 @@ namespace POKEnhanced2
                     pok2_button.Source = globals.GlobalVariables.teamList[1].Sprites.FrontDefault;
                     pok3_button.Source = globals.GlobalVariables.teamList[2].Sprites.FrontDefault;
                 }
-                else if (globals.GlobalVariables.teamList.Count == 4)
+                else if ( globals.GlobalVariables.teamList.Count == 4)
                 {
                     pok1_button.Source = globals.GlobalVariables.teamList[0].Sprites.FrontDefault;
                     pok2_button.Source = globals.GlobalVariables.teamList[1].Sprites.FrontDefault;
@@ -71,25 +71,26 @@ namespace POKEnhanced2
             }
         }
 
+
         async void openPokemonPage(string nameOrNum)
         {
-            //seting up URI and creatting HTTP client and response holder
+            // sets up URI and creates HTTP client and response holder.  
             string nameApiEndpoint = globals.GlobalVariables.searchByNameString + nameOrNum;
             Uri nameApiUri = new Uri(nameApiEndpoint);
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(nameApiUri);
 
-            //response stream into string
+            //response stream into string    
             string jsonContent = await response.Content.ReadAsStringAsync();
 
             if (jsonContent != globals.GlobalVariables.notFoundString)
             {
-                //parse into an object of type PokemonJson
+                //parses into an object of type PokemonJson
                 var pokemon = PokemonJson.FromJson(jsonContent);
 
                 globals.GlobalVariables.searchHistory.Add(pokemon);
 
-                //sending the object to the next page
+                //sends the object to the next page.
                 await Navigation.PushAsync(new PokemonPage(pokemon, globals.GlobalVariables.endpoint));
             }
         }

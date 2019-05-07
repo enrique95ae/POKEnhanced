@@ -23,38 +23,38 @@ namespace POKEnhanced2
         {
             if (nameEntry.Text != null)
             {
-                //getting input and constructing request url
+                //gets input and constructs request url
                 string userInput;
                 userInput = nameEntry.Text.ToLower();
 
-                //seting up URI and creatting HTTP client and response holder
+                //setting up URI and creatting HTTP client and response holder.    
                 string nameApiEndpoint = globals.GlobalVariables.searchByNameString + userInput;
                 globals.GlobalVariables.endpoint = nameApiEndpoint;
                 Uri nameApiUri = new Uri(nameApiEndpoint);
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(nameApiUri);
 
-                //response stream into string
+                // response stream into string.
                 string jsonContent = await response.Content.ReadAsStringAsync();
 
                 if (jsonContent != globals.GlobalVariables.notFoundString)
                 {
-                    //parse into an object of type PokemonJson
+                    //parses into an object of type PokemonJson.  
                     var pokemon = PokemonJson.FromJson(jsonContent);
 
                     globals.GlobalVariables.searchHistory.Add(pokemon);
 
-                    //sending the object to the next page
-                    await Navigation.PushAsync(new PokemonPage(pokemon, nameApiEndpoint));
+                    //sends the object to the next page.        
+                    await Navigation.PushAsync(new PokemonPage( pokemon, nameApiEndpoint));
                 }
-                else //pop up message if the pokemon doesn't exist
+                else //pop up message if the pokemon does not exist.  
                 {
-                    await DisplayAlert("NOT FOUND", "Please try again!", "OK");
+                    await DisplayAlert("NOT FOUND", "Please try again! ", "OK");
                 }
             }
             else
             {
-                await DisplayAlert("EMPTY FIELD", "Please enter a pokemon!", "OK");
+                await DisplayAlert("EMPTY FIELD", "Please enter a pokemon! ", "OK");
             }
 
         }
