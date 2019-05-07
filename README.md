@@ -35,7 +35,9 @@ If for some reason it doesnt work make sure to do:
 Newtonsoft.Json -> Json deserializing
 LinqToTwitter -> Using twitters API
 Xamarin.Plugin.Settings -> for storing data between app usages
-
+Zxing -> QR code generation
+Xamanimation -> For easier animations
+Microsoft.AppCenter -> For analytics
 
 ## Contributing and code usage
 This is by no means a good code, but it is a functioning base. Major improvements can be done all over the app.
@@ -64,7 +66,7 @@ Enrique Alonso Esposito
 
 Matthew Killoran
 
-
+Dylan Yesenofski
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
