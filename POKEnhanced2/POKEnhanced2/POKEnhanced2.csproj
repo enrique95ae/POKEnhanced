@@ -10,15 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
-    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="Plugin.Twitter" Version="1.0.1" />
     <PackageReference Include="linqtotwitter" Version="5.0.0" />
-    <PackageReference Include="QRCoder" Version="1.3.5" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
     <PackageReference Include="Xamanimation" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.14.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.14.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

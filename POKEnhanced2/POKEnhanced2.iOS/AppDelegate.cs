@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 using Foundation;
 using UIKit;
@@ -28,6 +31,10 @@ namespace POKEnhanced2.iOS
             global::Xamarin.Forms.Forms.Init();
 
             LoadApplication(new App());
+
+            //AppCenter.Start("fa01de57-a1a0-4f6a-b57d-ca52e19f6fda",
+                   //typeof(Analytics), typeof(Crashes));
+
 
             return base.FinishedLaunching(app, options);
         }

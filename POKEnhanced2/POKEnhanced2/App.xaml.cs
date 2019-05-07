@@ -1,7 +1,10 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace POKEnhanced2
@@ -20,12 +23,14 @@ namespace POKEnhanced2
 
         protected override void OnStart()
         {
-            // Handle when your app starts    
+            // Handle when your app starts
+            //AppCenter.Start("android=56f19ac5-0cb0-410d-8ee7-d283d96a8976; ios=fa01de57-a1a0-4f6a-b57d-ca52e19f6fda",
+            //typeof(Analytics), typeof(Crashes));  
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps  
+            // Handle when your app sleeps     
         }
 
         protected override void OnResume()

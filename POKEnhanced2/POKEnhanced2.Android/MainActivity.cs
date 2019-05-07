@@ -1,4 +1,7 @@
 ﻿using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 using Android.App;
 using Android.Content.PM;
@@ -20,6 +23,9 @@ namespace POKEnhanced2.Droid
             base.OnCreate(savedInstanceState);
 
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
+
+            //AppCenter.Start("56f19ac5-0cb0-410d-8ee7-d283d96a8976",
+                   //typeof(Analytics), typeof(Crashes));
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

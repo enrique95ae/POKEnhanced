@@ -10,7 +10,7 @@ namespace POKEnhanced2
         {
             //setting up the news page here instead of by using the xaml page.
             Title = "Twitter";
-            BackgroundColor = Color.White;
+            BackgroundColor = Color.Silver;
 
             var twitterViewModel = new TwitterViewModel();
 
@@ -19,7 +19,8 @@ namespace POKEnhanced2
             var label = new Label
             {
                 Text = "Tweets",
-                TextColor = Color.Gray,
+                TextColor = Color.White,
+                FontAttributes = FontAttributes.Bold,
                 FontSize = 24
             };
 
@@ -52,6 +53,7 @@ namespace POKEnhanced2
                 {
                     View = new StackLayout
                     {
+                        BackgroundColor = Color.Silver,
                         Orientation = StackOrientation.Horizontal,
                         Padding = new Thickness(0, 5),
                         Children =
